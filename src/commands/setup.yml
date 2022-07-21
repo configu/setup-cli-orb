@@ -8,9 +8,11 @@ parameters:
   #   description: "The version of Configu CLI to install. A value of `latest` will install the latest version of Configu CLI. Defaults to `latest`."
   org:
     type: string
+    default: ""
     description: "The organization id of a Configu SaaS instance to place within the credentials block of the Configu CLI configuration file."
   token:
     type: string
+    default: ""
     description: "The access token for a Configu SaaS instance to place within the credentials block of the Configu CLI configuration file."
 steps:
   - run:
