@@ -1,8 +1,8 @@
 # configu/setup-cli-orb
 
-[![CircleCI Build Status](https://circleci.com/gh/<organization>/<project-name>.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/<organization>/<project-name>) [![CircleCI Orb Version](https://badges.circleci.com/orbs/<namespace>/<orb-name>.svg)](https://circleci.com/orbs/registry/orb/<namespace>/<orb-name>) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
+[![CircleCI Build Status](https://circleci.com/gh/configu/setup-cli-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/configu/setup-cli-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/configu/setup-cli-orb.svg)](https://circleci.com/orbs/registry/orb/configu/setup-cli-orb) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
-The configu/setup-cli-orb orb is a Bash command that sets up Configu CLI in your CircleCI job by downloading a specific version of Configu CLI and adding it to the `PATH`.
+The configu/setup-cli-orb orb contains a bash command that sets up Configu CLI in your CircleCI workflow by downloading a specific version of Configu CLI and adding it to the `PATH`.
 
 After you've used the orb's setup command, subsequent steps in the same job can run arbitrary Configu CLI commands. All of Configu commands work exactly like they do on your local command line.
 
@@ -67,5 +67,5 @@ This orb is licensed under [Apache License 2.0](https://github.com/configu/setup
 ## References
 - [Configu SaaS platform (app.configu.io)](https://app.configu.io/)
 - [Configu Documentation](https://configu.io/docs)
-- [CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/<namespace>/<orb-name>) - The official registry page of this orb for all versions, executors, commands, and jobs described.
+- [CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/configu/setup-cli-orb) - The official registry page of this orb for all versions, executors, commands, and jobs described.
 - [CircleCI Orb Docs](https://circleci.com/docs/2.0/orb-intro/#section=configuration) - Docs for using, creating, and publishing CircleCI Orbs.

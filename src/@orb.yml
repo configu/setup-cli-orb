@@ -1,7 +1,9 @@
 version: 2.1
 
 description: >
-  Install and configure Configu CLI.
+  Sets up Configu CLI in your CircleCI workflow.
+  After you've used the orb's setup command, subsequent steps in the same job can run arbitrary Configu CLI commands.
+  All of Configu commands work exactly like they do on your local command line.
 
 display:
   home_url: "https://configu.io"
