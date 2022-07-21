@@ -1,0 +1,22 @@
+description: >
+  This command installs the Configu CLI.
+
+parameters:
+  # version:
+  #   type: string
+  #   default: "latest"
+  #   description: "The version of Configu CLI to install. A value of `latest` will install the latest version of Configu CLI. Defaults to `latest`."
+  org:
+    type: string
+    description: "The organization id of a Configu SaaS instance to place within the credentials block of the Configu CLI configuration file."
+  token:
+    type: string
+    description: "The access token for a Configu SaaS instance to place within the credentials block of the Configu CLI configuration file."
+steps:
+  - run:
+      name: "Setup Configu CLI"
+      environment:
+        CONFIGU_ORG: << parameters.org >>
+        CONFIGU_TOKEN: << parameters.token >>
+      command: |
+        curl https://configu.io/cli/install.sh | sh

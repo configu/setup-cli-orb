@@ -1,0 +1,17 @@
+description: >
+  Install the latest version of the Configu CLI.
+
+usage:
+  version: 2.1
+  orbs:
+    configu: configu/setup-cli-orb@1.0.0
+  jobs:
+    deploy:
+      docker:
+        - image: cimg/base:stable
+      steps:
+        - configu/setup
+  workflows:
+    deploy:
+      jobs:
+        - deploy
