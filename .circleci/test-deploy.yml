@@ -17,6 +17,7 @@ jobs:
       - checkout
       # Run your orb's commands to validate them.
       - configu/setup
+      - run: configu --version
 workflows:
   test-deploy:
     jobs:
