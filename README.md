@@ -28,14 +28,14 @@ workflows:
       - deploy
 ```
 
-<!-- A specific version of Configu CLI can be installed.
+A specific version of Configu CLI can be installed.
 
 ```yaml
 steps:
   - configu/setup:
-      version: 0.0.105
+      version: 0.0.127
   - run: configu --version
-``` -->
+```
 
 Credentials for Configu SaaS platform ([app.configu.io](https://app.configu.io/)) can be configured.
 
