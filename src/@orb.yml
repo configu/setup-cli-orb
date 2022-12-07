@@ -6,5 +6,5 @@ description: >
   All of Configu commands work exactly like they do on your local command line.
 
 display:
-  home_url: "https://configu.io"
+  home_url: "https://configu.com"
   source_url: "https://github.com/configu/setup-cli-orb"

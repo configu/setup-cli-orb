@@ -6,24 +6,12 @@ parameters:
     type: string
     default: "latest"
     description: "The version of Configu CLI to install. A value of `latest` will install the latest version of Configu CLI. Defaults to `latest`."
-  org:
-    type: string
-    default: ""
-    description: "The organization id of a Configu SaaS instance to place within the credentials block of the Configu CLI configuration file."
-  token:
-    type: string
-    default: ""
-    description: "The access token for a Configu SaaS instance to place within the credentials block of the Configu CLI configuration file."
 steps:
   - run:
       name: "Setup Configu CLI"
       command: |
         if [[ $(command -v configu) == "" ]]; then
-          CONFIGU_VERSION=<< parameters.version >> curl https://configu.io/cli/install.sh | sh
+          CONFIGU_VERSION=<< parameters.version >> curl https://cli.configu.com/install.sh | sh
         else
           echo "Configu CLI is already installed. No operation was performed."
-        fi
-
-        if [ -n "<< parameters.org >>" ] && [ -n "<< parameters.token >>" ]; then
-          configu login --org << parameters.org >> --token << parameters.token >>
         fi

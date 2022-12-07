@@ -4,7 +4,7 @@ description: >
 usage:
   version: 2.1
   orbs:
-    configu: configu/setup-cli-orb@1.0.0
+    configu: configu/setup-cli-orb@X.Y.Z
   jobs:
     deploy:
       docker:

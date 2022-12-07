@@ -13,10 +13,10 @@ The default configuration installs the latest version of Configu CLI.
 ```yaml
 version: 2.1
 orbs:
-  configu: configu/setup-cli-orb@1.0.0
+  configu: configu/setup-cli-orb@X.Y.Z
 
 jobs:
-  deploy:
+  use-configu:
     docker:
       - image: cimg/base:stable
     steps:
@@ -25,7 +25,7 @@ jobs:
 workflows:
   deploy:
     jobs:
-      - deploy
+      - use-configu
 ```
 
 A specific version of Configu CLI can be installed.
@@ -33,27 +33,26 @@ A specific version of Configu CLI can be installed.
 ```yaml
 steps:
   - configu/setup:
-      version: 0.0.127
+      version: 0.4.4
   - run: configu --version
 ```
 
-Credentials for Configu SaaS platform ([app.configu.io](https://app.configu.io/)) can be configured.
+Credentials for `Configu store` ([app.configu.com](https://app.configu.com/)) can be configured.
 
-without login (uses "CONFIGU_" environment variables):
 ```yaml
 jobs:
-  deploy:
-    context: configu-credentials-context
+  use-configu:
     steps:
       - configu/setup
-```
+      - run: configu store --name "configu" --uri "configu://-"
+      - run: configu export --set "production" --schema "path/to/schema.cfgu.json"
 
-with login:
-```yaml
-steps:
-  - configu/setup:
-      org: $CONFIGU_ORG
-      token: $CONFIGU_TOKEN
+workflows:
+  deploy:
+    jobs:
+      - use-configu:
+        # defines $CONFIGU_ORG and $CONFIGU_TOKEN
+        context: configu-credentials-context
 ```
 
 ## Parameters
@@ -65,7 +64,7 @@ The orb supports the [following parameters](https://github.com/configu/setup-cli
 This orb is licensed under [Apache License 2.0](https://github.com/configu/setup-cli-orb/blob/main/LICENSE).
 
 ## References
-- [Configu SaaS platform (app.configu.io)](https://app.configu.io/)
-- [Configu Documentation](https://configu.io/docs)
+- [Configu SaaS platform (app.configu.com)](https://app.configu.com/)
+- [Configu Documentation](https://configu.com/docs)
 - [CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/configu/setup-cli-orb) - The official registry page of this orb for all versions, executors, commands, and jobs described.
 - [CircleCI Orb Docs](https://circleci.com/docs/2.0/orb-intro/#section=configuration) - Docs for using, creating, and publishing CircleCI Orbs.
