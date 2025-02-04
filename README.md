@@ -8,7 +8,7 @@ After you've used the orb's setup command, subsequent steps in the same job can 
 
 ## Usage
 
-The default configuration installs the latest version of Configu CLI.
+The default configuration installs the latest version of Configu CLI
 
 ```yaml
 version: 2.1
